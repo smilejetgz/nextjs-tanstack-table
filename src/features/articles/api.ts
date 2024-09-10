@@ -9,7 +9,17 @@ export const findAll = async (page = 1, per_page = 10) => {
       skip: (page - 1) * per_page,
       take: per_page,
     });
-    return articles;
+    const total = await db.article.count();
+
+    return {
+      data: articles,
+      pagination: {
+        page,
+        per_page,
+        total,
+        total_pages: Math.ceil(total / per_page),
+      },
+    };
   } catch (error) {
     console.error('Error fetching articles:', error);
     throw new Error('Could not fetch articles');
