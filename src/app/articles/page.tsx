@@ -1,5 +1,7 @@
+import ArticlesList from '@/features/articles/components/ArticlesList';
+
 const ArticlesPage = () => {
-  return <div>article page</div>;
+  return <ArticlesList />;
 };
 
 export default ArticlesPage;
