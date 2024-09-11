@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { type ColumnDef } from '@tanstack/react-table';
 import { type ArticleItem } from '@/features/articles/types';
+import { truncate } from 'lodash';
 
 export const useColumns = () => {
   return useMemo<ColumnDef<ArticleItem['data'][number]>[]>(
@@ -26,7 +27,12 @@ export const useColumns = () => {
       {
         accessorKey: 'detail',
         header: 'Detail',
-        cell: (info) => info.getValue(),
+        cell: (info) => {
+          const value = info.getValue();
+          if (value === undefined || value === null) return '';
+          if (typeof value === 'string') return truncate(value, { length: 30 });
+          return value;
+        },
         footer: (props) => props.column.id,
       },
       {

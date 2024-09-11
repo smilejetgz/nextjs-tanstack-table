@@ -10,7 +10,7 @@ const fetchArticles = async (page: number, per_page: number) => {
   return articles;
 };
 
-export const useGetArticles = (page = 1, per_page = 10) => {
+export const useGetArticles = (page = 1, per_page = 20) => {
   const queryOptions: UseQueryOptions<ArticleItem, Error> = {
     queryKey: ['articles', page, per_page],
     queryFn: () => fetchArticles(page, per_page),
