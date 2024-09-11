@@ -37,7 +37,7 @@ const ArticlesList = () => {
             columns={columns}
             data={data.data}
             pagination={data.pagination}
-            setPagination={setPagination} // Pass setPagination to DataTable
+            setPagination={setPagination}
           />
         )}
       </CardContent>
