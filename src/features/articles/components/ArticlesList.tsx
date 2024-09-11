@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import { DataTable } from '@/features/ui/components/DataTable';
-import { useGetArticles } from '../hooks/api';
-import { useColumns } from './Columns';
+import { useGetArticles } from '@/features/articles/hooks/api';
+import { useColumns } from '@/features/articles/components/Columns';
 import {
   Card,
   CardContent,

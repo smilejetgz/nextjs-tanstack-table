@@ -24,8 +24,8 @@ export function DataTablePagination<TData>({
   pageSizeOptions = [10, 20, 30, 40, 50],
 }: DataTablePaginationProps<TData>) {
   return (
-    <div className="flex w-full flex-col-reverse items-center justify-center gap-4 overflow-auto p-1 sm:flex-row sm:gap-8">
-      <div className="text-muted-foreground flex-1 whitespace-nowrap text-sm">
+    <div className="flex w-full flex-col-reverse items-center justify-between gap-4 overflow-auto p-1 sm:flex-row sm:gap-8">
+      <div className="flex-1 whitespace-nowrap text-sm text-muted-foreground">
         {table.getFilteredRowModel().rows.length} of {table.getPageCount()}{' '}
         row(s)
       </div>
