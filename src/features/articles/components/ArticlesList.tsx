@@ -13,7 +13,7 @@ import {
 } from '@/features/shadcn/components/ui/card';
 
 const ArticlesList = () => {
-  const [pagination, setPagination] = useState({ page: 1, per_page: 10 });
+  const [pagination, setPagination] = useState({ page: 1, per_page: 20 });
   const { data, isLoading, error } = useGetArticles(
     pagination.page,
     pagination.per_page,
